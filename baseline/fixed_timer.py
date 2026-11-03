@@ -32,6 +32,8 @@ if __name__ == "__main__":
     r, q = run_policy(env, lambda obs, t: env.action_space.sample())
     print(f"Random      | reward {r:8.1f} | avg queue {q:5.2f} | approx wait {q/lam:5.2f} steps")
 
-    env.seed(42)
-    r, q = run_policy(env, fixed_timer(30))
-    print(f"Fixed (30)  | reward {r:8.1f} | avg queue {q:5.2f} | approx wait {q/lam:5.2f} steps")
+    print("\nPeriod sweep:")
+    for period in (4, 5, 6, 8, 10, 15, 20, 30, 40, 60):
+        env.seed(42)
+        r, q = run_policy(env, fixed_timer(period))
+        print(f"Fixed ({period:2d}) | reward {r:8.1f} | avg queue {q:5.2f} | approx wait {q/lam:5.2f} steps")
