@@ -9,7 +9,7 @@ from agents.discretize import discretize
 from agents.q_learning import QAgent
 from baseline.fixed_timer import run_policy, fixed_timer
 
-PATTERN = "static"      # change to "rush" for the second run
+PATTERN = "rush"      # change to "rush" for the second run
 EPISODES = 2000
 
 os.makedirs("results", exist_ok=True)
