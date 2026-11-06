@@ -4,7 +4,7 @@ from agents.discretize import N_LEVELS
 
 class QAgent:
     def __init__(self, alpha=0.1, gamma=0.95,
-                 eps_start=1.0, eps_end=0.05, eps_decay=0.997, seed=0):
+                 eps_start=1.0, eps_end=0.05, eps_decay=0.9985, seed=0):
         # state = (ns_level, ew_level, phase, yellow), 2 actions
         self.q = np.zeros((N_LEVELS, N_LEVELS, 2, 2, 2))
         self.alpha, self.gamma = alpha, gamma

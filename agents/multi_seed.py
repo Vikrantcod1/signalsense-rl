@@ -5,7 +5,7 @@ from agents.q_learning import QAgent
 from baseline.fixed_timer import run_policy, fixed_timer
 
 SEEDS = [0, 1, 2, 3, 4]
-EPISODES = 2000
+EPISODES = 4000
 
 
 def train(pattern, seed):
